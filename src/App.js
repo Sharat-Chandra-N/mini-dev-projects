@@ -7,6 +7,7 @@ const App = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        height: "100vh",
       }}
     >
       Website under constuction
