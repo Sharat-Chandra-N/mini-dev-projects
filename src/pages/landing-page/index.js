@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const randomColorGenerator = () => {
@@ -18,7 +19,6 @@ const LandingPage = () => {
 
   return (
     <>
-      <h2 style={{textAlign:"center"}}> Mini React Project</h2>
       <div
         style={{
           display: "flex",
@@ -30,11 +30,9 @@ const LandingPage = () => {
       >
         {landingCardsData?.map((card) => {
           return (
-            <a
-              href={`${window.location.href}/${card?.path}`}
-              target="_blank"
-              rel="noreferrer"
+            <Link
               key={card?.id}
+              to={card?.path}
               style={{
                 width: "calc(25% - 40px)",
                 margin: "20px",
@@ -42,21 +40,17 @@ const LandingPage = () => {
                 color: card?.color,
                 border: `1px solid ${card?.color}`,
                 borderRadius: "10px",
-                textDecoration: "none",
                 height: "15vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textDecoration: "none",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "100%",
-                }}
-              >
+              <div>
                 <h4>{card?.name}</h4>
               </div>
-            </a>
+            </Link>
           );
         })}
       </div>

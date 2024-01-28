@@ -16,7 +16,13 @@ const App = () => {
     <Routes>
       <Route path={basepath} element={<LandingPage />} />
       {routersArray?.map((route) => (
-        <Route key={route?.id} path={`${basepath}/${route?.path}`} element={route?.component} />
+        <Route
+          key={route?.id}
+          path={`${basepath}/${route?.path}`}
+          element={
+            <Comps.RenderComp basepath={basepath} comp={route?.component} />
+          }
+        />
       ))}
     </Routes>
   );
