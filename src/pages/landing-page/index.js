@@ -12,7 +12,7 @@ const LandingPage = () => {
       id: 1,
       name: "Expense Calculator",
       color: randomColorGenerator(),
-      path: "/expense-calculator",
+      path: "expense-calculator",
     },
   ];
 
@@ -31,7 +31,7 @@ const LandingPage = () => {
         {landingCardsData?.map((card) => {
           return (
             <a
-              href={`${window.location.pathname}${card?.path}`}
+              href={`${window.location.href}/${card?.path}`}
               target="_blank"
               rel="noreferrer"
               key={card?.id}
